@@ -1,0 +1,5 @@
+body{
+    background: black;
+    justify-content: center;
+    padding-top: 70px; /* Altura para que no quede oculto el contenido */
+}
