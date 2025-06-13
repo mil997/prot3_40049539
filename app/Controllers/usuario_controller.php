@@ -25,5 +25,70 @@ class usuario_controller extends Controller{
             'pass'      => 'required|min_length[3]|max_length[10]'
         ],
     );
+    $formodel = new usuario_Model();
+
+    if (!$imput) {
+            $data['titulo']='registro';
+            . view('front/head_view',$data);
+            . view('front/navbar_view')
+            . view('back/usuario/registro', ['validation' => $this->validator]);
+            . view('front/footer_view');
+    }
+
+    else {
+        $formModel->save([
+            'nombre'    => $this->request->getVar('nombre')
+            'apellido'  => $this->request->getVar('apellido')
+            'usuario'   => $this->request->getVar('usuario')
+            'email'     => $this->request->getVar('email')
+            'pass'      => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT)
+
+                        // dar mensaje de exito o error //
+
+            session()->setFlashdata('success', 'usuario registrado con exito');
+            return $this-> response->redirect ('/login');
+        ])
+        
+       }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

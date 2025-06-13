@@ -11,7 +11,7 @@
 
 <!-- Formulario de Registro -->
 
-<div class="container py-5">
+<div class="container py-5 text-white">
   <h2>Iniciar sesion</h2>
   <form action="procesar_registro.php" method="POST">
     <div class="mb-3">
@@ -24,6 +24,9 @@
     </div>
     <button type="submit" class="btn btn-success">Ingresar</button>
     <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancelar</button>
+    <div class="container py-4 p-0">
+      <br"><span">¿Aún no se registró? <a href="<?php echo base_url('/registro');?>">Registrarse aquí</a></span>
+    </div>
   </form>
 </div>
 

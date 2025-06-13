@@ -11,7 +11,7 @@
 
 <!-- Formulario de registro -->
 
-<div class="container py-5">
+<div class="container py-5 text-white">
   <h2>Formulario de Registro</h2>
   <form action="procesar_registro.php" method="POST">
     <div class="mb-3">

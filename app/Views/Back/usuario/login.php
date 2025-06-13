@@ -12,7 +12,10 @@
       <input type="password" class="form-control" id="password" name="password" required>
     </div>
     <button type="submit" class="btn btn-success">Ingresar</button>
-    <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancelar</button>
+    <button type="button" class="btn btn-secondary">Cancelar</button>
+    <div class="container py-4 p-0">
+      <br"><span">¿Aún no se registró? <a href="<?php echo base_url('/registro');?>">Registrarse aquí</a></span>
+    </div>
   </form>
 </div>
 

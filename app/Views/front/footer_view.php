@@ -1,10 +1,10 @@
 <footer>
   <div class="container-fluid bg-dark p-5 text-center">
     <div class="row">
-      <div class="col"><a href="#" class="text-decoration-none">Información</a></div>
-      <div class="col"><a href="#" class="text-decoration-none">Acerca de</a></div>
-      <div class="col"><a href="#" class="text-decoration-none">Redes Sociales</a></div>
-      <div class="col"><a href="#" class="text-decoration-none">FAQ</a></div>
+      <div class="col fw-bold"><a href="#" class="text-decoration-none">Información</a></div>
+      <div class="col fw-bold"><a href="#" class="text-decoration-none">Acerca de</a></div>
+      <div class="col fw-bold"><a href="#" class="text-decoration-none">Redes Sociales</a></div>
+      <div class="col fw-bold"><a href="#" class="text-decoration-none">FAQ</a></div>
       </div>
     </div>
   </div>

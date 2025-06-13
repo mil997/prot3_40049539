@@ -1,6 +1,6 @@
 <!-- Barra de navegación -->
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-warning">
   <div class="container-fluid">
     <a class="navbar-brand me-auto barra" href="<?php echo base_url('principal') ?>">
 
@@ -17,21 +17,21 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="quienes_somos">Quiénes Somos</a>
+          <a class="nav-link fw-bold text-black" href="quienes_somos">Quiénes Somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="acercade">Acerca de</a>
+          <a class="nav-link fw-bold text-black" href="acercade">Acerca de</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="registro">Registrarse</a>
+          <a class="nav-link fw-bold text-black" href="registro">Registrarse</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
+          <a class="nav-link fw-bold text-black" href="login">Login</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <input class="form-control me-2 fw-bold" type="search" placeholder="Buscar" aria-label="Search"/>
+        <button class="btn btn-outline-success fw-bold" type="submit">Buscar</button>
       </form>
     </div>
   </div>
