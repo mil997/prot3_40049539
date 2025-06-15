@@ -1,20 +1,29 @@
 <!-- Barra de navegación -->
+<?php
+$session = session();
+$nombre = $session->get('nombre');
+$perfil = $session->get('perfil_id');
+?>
 
 <nav class="navbar navbar-expand-lg bg-warning">
   <div class="container-fluid">
     <a class="navbar-brand me-auto barra" href="<?php echo base_url('principal') ?>">
-
-      <!-- Logo de la empresa -->
-
-    <img src="<?php echo base_url('assets/img/logopagina.png') ?>" alt="logo" width="75" height="30" class="img-fluid"/>
+      <img src="<?php echo base_url('assets/img/logopagina.png') ?>" alt="logo" width="75" height="30" class="img-fluid"/>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+    <?php if(session()->perfil_id == 1): ?>
+      <div class="btn btn-secondary active btnUser btn-sm">
+        <a href="">ADMIN: <?php echo session('nombre'); ?> </a>
+      </div>
+    <?php endif; ?>
 
     <a class="navbar-brand" href="#"></a>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link fw-bold text-black" href="quienes_somos">Quiénes Somos</a>
