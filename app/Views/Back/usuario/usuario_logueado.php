@@ -11,14 +11,14 @@
 
                     <!-- aca tengo que agregar la imagen de administrador, tengo que descargar todavia -->
                     <div>
-                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/admin.png');?>">
+                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/imagenadmin.png');?>">
                     </div>
 
                 <?php if(session()->perfil_id == 2): ?>
 
                     <!-- aca tengo que agregar la imagen de cliente, tengo que descargar todavia -->
                     <div>
-                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/cliente.png');?>">
+                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/imagencliente.png');?>">
                     </div>
                     <?php endif;?>
         </div>

@@ -11,7 +11,7 @@ class usuario_controller extends Controller{
     }
     public function create(){
         $dato['titulo']='registro';
-        . view('front/head_view',$data);
+        . view('front/head_view',$dato);
         . view('front/navbar_view')
         . view('back/usuario/registro')
         . view('front/footer_view');
@@ -27,6 +27,8 @@ class usuario_controller extends Controller{
     );
     $formodel = new usuario_Model();
 
+    // si el usuario ingresa mal los datos, va a recibir un mensaje de error en el campo //
+
     if (!$imput) {
             $data['titulo']='registro';
             . view('front/head_view',$data);
@@ -34,6 +36,8 @@ class usuario_controller extends Controller{
             . view('back/usuario/registro', ['validation' => $this->validator]);
             . view('front/footer_view');
     }
+
+    // si el usuario ingresa bien los datos, va a guardarse en una variable //
 
     else {
         $formModel->save([

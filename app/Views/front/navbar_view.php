@@ -37,8 +37,34 @@ $perfil = $session->get('perfil_id');
         <li class="nav-item">
           <a class="nav-link fw-bold text-black" href="login">Login</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="<?php echo base_url('/logout');?>" tabindex="-1" aria-disabled="true">Cerrar Sesión</a>
+        </li>
       </ul>
-      <form class="d-flex" role="search">
+    </div>
+
+    <?php if(session()->perfil_id == 2): ?>
+      <div class="btn btn-secondary active btnUser btn-sm">
+        <a href="">CLIENTE: <?php echo session('nombre'); ?> </a>
+      </div>
+    <?php endif; ?>
+
+    <!-- Navbar para los clientes logueados -->
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="quienes_somos">Quiénes Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="acercade">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="<?php echo base_url('/logout');?>" tabindex="-1" aria-disabled="true">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+    <form class="d-flex" role="search">
         <input class="form-control me-2 fw-bold" type="search" placeholder="Buscar" aria-label="Search"/>
         <button class="btn btn-outline-success fw-bold" type="submit">Buscar</button>
       </form>
