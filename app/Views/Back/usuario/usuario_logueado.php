@@ -1,26 +1,33 @@
 <div class="container mt-5">
     <div class="row justify-content-md-center">
         <div class="col-5">
-            <?php if(session()->getFlashdata('msg')):?>
+
+            <?php if(session()->getFlashdata('msg')): ?>
                 <div class="alert alert-warning">
-                    <?= session()->getFlashdata('msg')?>
+                    <?= session()->getFlashdata('msg') ?>
                 </div>
-                <?php endif;?>
-                <br><br>
-                <?php if(session()->perfil_id == 1): ?>
+            <?php endif; ?>
 
-                    <!-- aca tengo que agregar la imagen de administrador, tengo que descargar todavia -->
-                    <div>
-                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/imagenadmin.png');?>">
-                    </div>
+            <br><br>
 
-                <?php if(session()->perfil_id == 2): ?>
+            <?php if(session()->perfil_id == 1): ?>
 
-                    <!-- aca tengo que agregar la imagen de cliente, tengo que descargar todavia -->
-                    <div>
-                        <<img class="center" height="100px" width="100px" src="<?php echo base_url ('assets/img/imagencliente.png');?>">
-                    </div>
-                    <?php endif;?>
+                <!-- Imagen para el Administrador // tengo que descargar todavía -->
+
+                <div>
+                    <img class="center mb-5 mx-5" height="100px" width="100px" src="<?= base_url('assets/img/imagenadmin.png') ?>">
+                </div>
+            <?php endif; ?>
+
+            <?php if(session()->perfil_id == 2): ?>
+
+                <!-- Imagen para el Cliente // tengo que descargar todavía --> 
+
+                <div>
+                    <img class="center mb-5 mx-5" height="100px" width="100px" src="<?= base_url('assets/img/imagencliente.png') ?>">
+                </div>
+            <?php endif; ?>
+
         </div>
     </div>
 </div>

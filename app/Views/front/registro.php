@@ -32,18 +32,22 @@
       <label for="nombre" class="form-label">Nombre</label>
       <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="name">
     </div>
+
           <!-- error -->
+
         <?php if($validation->getError('nombre')) {?>
           <div class='alert alert-danger mt-2'>
             <?= $error = $validation->getError('nombre'); ?>
           </div>
         <?php }?>
 
-        <div class="mb-3">
+    <div class="mb-3">
       <label for="nombre" class="form-label">Apellido</label>
       <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="name">
     </div>
+
           <!-- error -->
+
         <?php if($validation->getError('apellido')) {?>
           <div class='alert alert-danger mt-2'>
             <?= $error = $validation->getError('apellido'); ?>
@@ -54,7 +58,9 @@
       <label for="correo" class="form-label">Correo electrónico</label>
       <input type="email" class="form-control" id="correo" name="correo" required autocomplete="email">
     </div>
+
           <!-- error -->
+
         <?php if($validation->getError('email')) {?>
           <div class='alert alert-danger mt-2'>
             <?= $error = $validation->getError('email'); ?>
@@ -65,7 +71,9 @@
       <label for="nombre" class="form-label">Usuario</label>
       <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="name">
     </div>
+
           <!-- error -->
+
         <?php if($validation->getError('usuario')) {?>
           <div class='alert alert-danger mt-2'>
             <?= $error = $validation->getError('usuario'); ?>
@@ -76,7 +84,9 @@
       <label for="password" class="form-label">Contraseña</label>
       <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password" minlength="6">
     </div>
+
           <!-- error -->
+
         <?php if($validation->getError('contraseña')) {?>
           <div class='alert alert-danger mt-2'>
             <?= $error = $validation->getError('contraseña'); ?>
@@ -91,7 +101,3 @@
 </div>
 
 <!-- Fin del formulario -->
-
- 
-</body>
-</html>

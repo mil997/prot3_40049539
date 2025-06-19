@@ -1,58 +1,60 @@
 <?php
+
 namespace App\Controllers;
-Use App\Models\usuario_Model;
+use App\Models\usuario_Model;
 use CodeIgniter\Controller;
 
-class usuario_controller extends Controller{
-
-    public function _construct(){
+class usuario_controller extends Controller
+{
+    public function __construct()
+    {
         helper(['form', 'url']);
-
     }
-    public function create(){
-        $dato['titulo']='registro';
-        . view('front/head_view',$dato);
-        . view('front/navbar_view')
-        . view('back/usuario/registro')
-        . view('front/footer_view');
-    } 
-    public function formValidation(){ 
-        $imput = $this->validate([
-            'nombre'    => 'required|min_length[3]',  
-            'apellido'  => 'required|min_length[3]|max_length[25]';
+
+    public function create()
+    {
+        // Muestra el formulario
+        $dato['titulo'] = 'registro';
+        return view('front/head_view', $dato)
+             . view('front/navbar_view')
+             . view('back/usuario/registro') // Asegurate de que exista esta vista
+             . view('front/footer_view');
+    }
+
+    public function formValidation()
+    {
+        // Validación de campos
+        $isValid = $this->validate([
+            'nombre'    => 'required|min_length[3]',
+            'apellido'  => 'required|min_length[3]|max_length[25]',
             'usuario'   => 'required|min_length[3]',
             'email'     => 'required|min_length[3]|max_length[100]|valid_email|is_unique[usuarios.email]',
             'pass'      => 'required|min_length[3]|max_length[10]'
-        ],
-    );
-    $formodel = new usuario_Model();
+        ]);
 
-    // si el usuario ingresa mal los datos, va a recibir un mensaje de error en el campo //
+        if (!$isValid) {
+            // Devuelve a la vista con errores
+            return view('front/head_view')
+                 . view('front/navbar_view')
+                 . view('back/usuario/registro', ['validation' => $this->validator])
+                 . view('front/footer_view');
+        }
 
-    if (!$imput) {
-            $data['titulo']='registro';
-            . view('front/head_view',$data);
-            . view('front/navbar_view')
-            . view('back/usuario/registro', ['validation' => $this->validator]);
-            . view('front/footer_view');
-    }
+        // Guardar datos
+        $model = new usuario_Model();
+        $model->save([
+            'nombre'    => $this->request->getPost('nombre'),
+            'apellido'  => $this->request->getPost('apellido'),
+            'usuario'   => $this->request->getPost('usuario'),
+            'email'     => $this->request->getPost('email'),
+            'pass'      => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT),
+            'perfil_id' => 2, // Cliente por defecto
+            'baja'      => 'NO'
+        ]);
 
-    // si el usuario ingresa bien los datos, va a guardarse en una variable //
-
-    else {
-        $formModel->save([
-            'nombre'    => $this->request->getVar('nombre')
-            'apellido'  => $this->request->getVar('apellido')
-            'usuario'   => $this->request->getVar('usuario')
-            'email'     => $this->request->getVar('email')
-            'pass'      => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT)
-
-                        // dar mensaje de exito o error //
-
-            session()->setFlashdata('success', 'usuario registrado con exito');
-            return $this-> response->redirect ('/login');
-        ])
-        
-       }
+        // Mensaje y redirección
+        session()->setFlashdata('success', 'Usuario registrado con éxito');
+        return redirect()->to('/login');
     }
 }
+
