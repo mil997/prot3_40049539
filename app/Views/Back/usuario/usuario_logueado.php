@@ -15,7 +15,7 @@
                 <!-- Imagen para el Administrador // tengo que descargar todavía -->
 
                 <div>
-                    <img class="center mb-5 mx-5" height="100px" width="100px" src="<?= base_url('assets/img/imagenadmin.png') ?>">
+                    <img class="center mb-5 mx-5" height="100px" width="100px" src="<?= base_url('assets/img/imagenadmin4.png') ?>">
                 </div>
             <?php endif; ?>
 
