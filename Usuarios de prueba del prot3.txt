@@ -1,0 +1,28 @@
+Usuario Admin: 
+
+Nombre: Nicolas		
+Apellido: Baez
+Email: nicobaez@hotmail.com
+Usuario: Nico
+Contraseña: asd12345
+
+
+
+
+Usuario Cliente:
+
+Nombre: Maria		
+Apellido: Diaz
+Email: mariadiaz@hotmail.com
+Usuario: Maria
+Contraseña: asd12345
+
+
+
+Usuario Cliente:
+
+Nombre: Mariano		
+Apellido: Lopez
+Email: marianolopez@hotmail.com
+Usuario: Mariano
+Contraseña: asd12345

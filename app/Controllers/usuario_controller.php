@@ -57,4 +57,3 @@ class usuario_controller extends Controller
         return redirect()->to('/login');
     }
 }
-
